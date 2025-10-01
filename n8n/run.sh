@@ -1,14 +1,20 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bash
 set -e
 
+# 📌 Fonction pour récupérer une valeur depuis config.json
+get_config() {
+  key="$1"
+  jq -r ".options.\"$key\"" /data/config.json
+}
+
 # Lire config.json
-HOST=$(bashio::config 'host')
-PROTOCOL=$(bashio::config 'protocol')
-PORT=$(bashio::config 'port')
-WEBHOOK_URL=$(bashio::config 'webhook_url')
-BASE_API=$(bashio::config 'base_api')
-BASIC_USER=$(bashio::config 'basic_auth_user')
-BASIC_PASS=$(bashio::config 'basic_auth_password')
+HOST=$(get_config "host")
+PROTOCOL=$(get_config "protocol")
+PORT=$(get_config "port")
+WEBHOOK_URL=$(get_config "webhook_url")
+BASE_API=$(get_config "base_api")
+BASIC_USER=$(get_config "basic_auth_user")
+BASIC_PASS=$(get_config "basic_auth_password")
 
 # Exporter comme variables d’environnement pour n8n
 export N8N_HOST="${HOST}"
@@ -28,5 +34,7 @@ echo "- Protocol: ${PROTOCOL}"
 echo "- Port: ${PORT}"
 echo "- Webhook URL: ${WEBHOOK_URL}"
 echo "- Base API: ${BASE_API}"
+echo "- Basic Auth User: ${BASIC_USER}"
 
+# Lancer n8n
 exec n8n
