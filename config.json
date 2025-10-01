@@ -9,7 +9,10 @@
   "ports": {
     "5678/tcp": 5678
   },
-  "map": ["config:rw", "data:rw"],
+  "map": {
+    "config": "rw",
+    "data": "rw"
+  },
   "options": {
     "host": "0.0.0.0",
     "protocol": "http",
