@@ -1,0 +1,16 @@
+{
+  "name": "Custom Add-ons by Steven",
+  "url": "https://github.com/spoof54/home-assistant-addons",
+  "maintainer": "Spoof54",
+  "addons": {
+    "n8n": {
+      "name": "n8n Automation",
+      "description": "Powerful workflow automation tool with Home Assistant WebSocket integration.",
+      "slug": "n8n",
+      "url": "https://github.com/spoof54/home-assistant-addons/tree/main/n8n",
+      "arch": ["aarch64", "amd64", "armv7"],
+      "maintainer": "Spoof54",
+      "icon": "https://raw.githubusercontent.com/spoof54/home-assistant-addons/main/n8n/n8n-color.svg"
+    }
+  }
+}
