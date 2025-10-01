@@ -1,8 +1,8 @@
 FROM node:20-bullseye-slim
 
-# Installer dépendances minimales
+# Installer dépendances nécessaires
 RUN apt-get update && \
-    apt-get install -y tini git bash && \
+    apt-get install -y tini git jq bash && \
     rm -rf /var/lib/apt/lists/*
 
 # Dossier de travail pour n8n
