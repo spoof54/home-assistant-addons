@@ -1,0 +1,27 @@
+{
+  "name": "n8n Automation",
+  "version": "1.0.0",
+  "slug": "n8n",
+  "description": "n8n - Workflow Automation Tool inside Home Assistant",
+  "arch": ["amd64", "aarch64"],
+  "startup": "services",
+  "boot": "auto",
+  "ports": {
+    "5678/tcp": 5678
+  },
+  "map": ["config:rw", "data:rw"],
+  "options": {
+    "host": "example.com",
+    "protocol": "https",
+    "port": 5678,
+    "webhook_url": "https://example.com/",
+    "rest_api": "https://example.com/api/"
+  },
+  "schema": {
+    "host": "str",
+    "protocol": "str",
+    "port": "int",
+    "webhook_url": "str",
+    "rest_api": "str"
+  }
+}
