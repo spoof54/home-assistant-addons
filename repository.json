@@ -9,7 +9,8 @@
       "slug": "n8n",
       "url": "https://github.com/spoof54/home-assistant-addons/tree/main/n8n",
       "arch": ["aarch64", "amd64", "armv7"],
-      "maintainer": "Steven Houy <steven@example.com>"
+      "maintainer": "Steven Houy <steven@example.com>",
+      "icon": "https://raw.githubusercontent.com/spoof54/home-assistant-addons/main/n8n/n8n-color.svg"
     }
   }
 }
