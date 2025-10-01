@@ -27,5 +27,6 @@
     "base_api": "str",
     "basic_auth_user": "str",
     "basic_auth_password": "str"
-  }
+  },
+  "icon": "local/n8n-color.svg"
 }
