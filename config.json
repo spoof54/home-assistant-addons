@@ -11,17 +11,21 @@
   },
   "map": ["config:rw", "data:rw"],
   "options": {
-    "host": "example.com",
-    "protocol": "https",
+    "host": "0.0.0.0",
+    "protocol": "http",
     "port": 5678,
-    "webhook_url": "https://example.com/",
-    "rest_api": "https://example.com/api/"
+    "webhook_url": "http://localhost:5678/",
+    "base_api": "/rest",
+    "basic_auth_user": "admin",
+    "basic_auth_password": "admin"
   },
   "schema": {
     "host": "str",
     "protocol": "str",
     "port": "int",
     "webhook_url": "str",
-    "rest_api": "str"
+    "base_api": "str",
+    "basic_auth_user": "str",
+    "basic_auth_password": "str"
   }
 }
