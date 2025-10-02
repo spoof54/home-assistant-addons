@@ -1,6 +1,6 @@
 {
   "name": "n8n Automation Addon",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "slug": "n8n",
   "description": "n8n - Workflow Automation Tool inside Home Assistant",
   "arch": ["amd64", "aarch64"],
@@ -14,13 +14,15 @@
     "data": "rw"
   },
   "options": {
-    "webhook_url": "http://localhost:5678/",
+    "port": 5678,
+    "webhook_url": "",
     "base_api": "/rest",
     "basic_auth_user": "admin",
     "basic_auth_password": "admin"
   },
   "schema": {
-    "webhook_url": "str",
+    "port": "int",
+    "webhook_url": "str?",
     "base_api": "str",
     "basic_auth_user": "str",
     "basic_auth_password": "str"
