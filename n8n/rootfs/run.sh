@@ -37,6 +37,9 @@ export N8N_BASIC_AUTH_ACTIVE=true
 export N8N_BASIC_AUTH_USER="${BASIC_USER}"
 export N8N_BASIC_AUTH_PASSWORD="${BASIC_PASS}"
 
+# 📌 Task Broker sur PORT + 1 pour éviter conflit
+export N8N_TASKS_PORT=$((PORT + 1))
+
 # 📌 Recommandations pour éviter les dépréciations
 export DB_SQLITE_POOL_SIZE=1
 export N8N_RUNNERS_ENABLED=true
@@ -45,6 +48,7 @@ export N8N_GIT_NODE_DISABLE_BARE_REPOS=true
 
 echo "🚀 Lancement de n8n avec la configuration suivante :"
 echo "- Internal Port: ${PORT}"
+echo "- Task Broker Port: ${N8N_TASKS_PORT}"
 echo "- Webhook URL: ${WEBHOOK_URL}"
 echo "- Base API: ${BASE_API}"
 echo "- Basic Auth User: ${BASIC_USER}"
