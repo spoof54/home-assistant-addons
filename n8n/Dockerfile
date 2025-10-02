@@ -15,12 +15,12 @@ RUN npm install -g n8n n8n-nodes-homeassistantws
 # Sécurité : forcer les permissions
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
-# Ajouter script de démarrage
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+# Copier rootfs dans le container
+COPY rootfs/ /rootfs/
+RUN chmod +x /rootfs/run.sh
 
-# Exposer port
+# Exposer port par défaut
 EXPOSE 5678
 
-# Lancer via tini + run.sh
-ENTRYPOINT ["/usr/bin/tini", "-s", "--", "/run.sh"]
+# Lancer via tini + run.sh depuis rootfs
+ENTRYPOINT ["/usr/bin/tini", "-s", "--", "/rootfs/run.sh"]
