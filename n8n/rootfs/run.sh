@@ -8,16 +8,18 @@ get_option() {
 }
 
 # Lire les options configurées dans l'UI
-PORT=$(get_option "port")                   # <-- Nouveau
+PORT=$(get_option "port")                    
 WEBHOOK_URL=$(get_option "webhook_url")
 BASE_API=$(get_option "base_api")
 BASIC_USER=$(get_option "basic_auth_user")
 BASIC_PASS=$(get_option "basic_auth_password")
 
 # Exporter comme variables d’environnement pour n8n
-export N8N_PORT="${PORT}"                    # <-- Nouveau
-export WEBHOOK_URL="${WEBHOOK_URL}"
+export N8N_HOST="0.0.0.0"
+export N8N_PROTOCOL="http"
+export N8N_PORT="5678"                    
 export N8N_ENDPOINT_REST="${BASE_API}"
+export WEBHOOK_URL="${WEBHOOK_URL}"
 
 # Auth basique
 export N8N_BASIC_AUTH_ACTIVE=true
@@ -25,7 +27,7 @@ export N8N_BASIC_AUTH_USER="${BASIC_USER}"
 export N8N_BASIC_AUTH_PASSWORD="${BASIC_PASS}"
 
 echo "🚀 Lancement de n8n avec la configuration suivante :"
-echo "- Port: ${PORT}"
+echo "- Internal Port: ${PORT}"
 echo "- Webhook URL: ${WEBHOOK_URL}"
 echo "- Base API: ${BASE_API}"
 echo "- Basic Auth User: ${BASIC_USER}"
