@@ -1,6 +1,6 @@
 {
   "name": "n8n Automation Addon",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "slug": "n8n",
   "description": "n8n - Workflow Automation Tool inside Home Assistant",
   "arch": ["amd64", "aarch64"],
@@ -22,7 +22,7 @@
   },
   "schema": {
     "port": "int",
-    "webhook_url": "str?",
+    "webhook_url": "str",
     "base_api": "str",
     "basic_auth_user": "str",
     "basic_auth_password": "str"
