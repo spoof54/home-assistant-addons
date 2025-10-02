@@ -20,6 +20,7 @@ export N8N_PROTOCOL="http"
 export N8N_PORT="5678"                    
 export N8N_ENDPOINT_REST="${BASE_API}"
 export WEBHOOK_URL="${WEBHOOK_URL}"
+export N8N_CORS_ALLOW_ORIGIN="*"
 
 # Auth basique
 export N8N_BASIC_AUTH_ACTIVE=true
