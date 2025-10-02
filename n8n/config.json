@@ -1,6 +1,6 @@
 {
   "name": "n8n Automation Addon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "slug": "n8n",
   "description": "n8n - Workflow Automation Tool inside Home Assistant",
   "arch": ["amd64", "aarch64"],
