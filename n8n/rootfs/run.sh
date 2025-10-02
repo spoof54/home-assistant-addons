@@ -19,9 +19,12 @@ if [ -z "$PORT" ] || [ "$PORT" = "null" ]; then
     PORT=5678
 fi
 
+# 📌 Récupérer automatiquement l'IP de Home Assistant
+HA_IP=$(hostname -I | awk '{print $1}')
+
 # 📌 Définir le webhook par défaut si vide
 if [ -z "$WEBHOOK_URL" ] || [ "$WEBHOOK_URL" = "null" ]; then
-    WEBHOOK_URL="http://0.0.0.0:${PORT}"
+    WEBHOOK_URL="http://${HA_IP}:${PORT}"
 fi
 
 # 📌 Export des variables d'environnement pour n8n
@@ -38,7 +41,7 @@ export N8N_BASIC_AUTH_USER="${BASIC_USER}"
 export N8N_BASIC_AUTH_PASSWORD="${BASIC_PASS}"
 
 # 📌 Task Broker sur PORT + 1 pour éviter conflit
-export N8N_TASKS_PORT=$((PORT + 1))
+TASK_BROKER_PORT=$((PORT + 1))
 
 # 📌 Recommandations pour éviter les dépréciations
 export DB_SQLITE_POOL_SIZE=1
@@ -48,11 +51,11 @@ export N8N_GIT_NODE_DISABLE_BARE_REPOS=true
 
 echo "🚀 Lancement de n8n avec la configuration suivante :"
 echo "- Internal Port: ${PORT}"
-echo "- Task Broker Port: ${N8N_TASKS_PORT}"
+echo "- Task Broker Port: ${TASK_BROKER_PORT}"
 echo "- Webhook URL: ${WEBHOOK_URL}"
 echo "- Base API: ${BASE_API}"
 echo "- Basic Auth User: ${BASIC_USER}"
 echo "- Host: ${N8N_HOST}"
 
-# 📌 Lancement de n8n
-exec n8n
+# 📌 Lancement de n8n en spécifiant le port et le Task Broker
+exec n8n start --port $PORT --tunnel-port $TASK_BROKER_PORT
