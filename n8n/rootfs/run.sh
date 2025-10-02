@@ -17,7 +17,7 @@ BASIC_PASS=$(get_option "basic_auth_password")
 # Exporter comme variables d’environnement pour n8n
 export N8N_HOST="0.0.0.0"
 export N8N_PROTOCOL="http"
-export N8N_PORT="5678"                    
+export N8N_PORT="${PORT}"                     # <-- utiliser le port de l'UI
 export N8N_ENDPOINT_REST="${BASE_API}"
 export WEBHOOK_URL="${WEBHOOK_URL}"
 export N8N_CORS_ALLOW_ORIGIN="*"
