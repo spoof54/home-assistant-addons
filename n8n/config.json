@@ -14,18 +14,12 @@
     "data": "rw"
   },
   "options": {
-    "host": "0.0.0.0",
-    "protocol": "http",
-    "port": 5678,
     "webhook_url": "http://localhost:5678/",
     "base_api": "/rest",
     "basic_auth_user": "admin",
     "basic_auth_password": "admin"
   },
   "schema": {
-    "host": "str",
-    "protocol": "str",
-    "port": "int",
     "webhook_url": "str",
     "base_api": "str",
     "basic_auth_user": "str",
