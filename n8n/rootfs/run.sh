@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
-# 📌 Fonction pour récupérer une valeur depuis config.json
-get_config() {
+# 📌 Fonction pour récupérer une valeur depuis options.json
+get_option() {
   key="$1"
-  jq -r ".options.\"$key\"" /data/config.json
+  jq -r ".\"$key\"" /data/options.json
 }
 
 # Lire les options configurées dans l'UI
-WEBHOOK_URL=$(get_config "webhook_url")
-BASE_API=$(get_config "base_api")
-BASIC_USER=$(get_config "basic_auth_user")
-BASIC_PASS=$(get_config "basic_auth_password")
+WEBHOOK_URL=$(get_option "webhook_url")
+BASE_API=$(get_option "base_api")
+BASIC_USER=$(get_option "basic_auth_user")
+BASIC_PASS=$(get_option "basic_auth_password")
 
 # Exporter comme variables d’environnement pour n8n
 export WEBHOOK_URL="${WEBHOOK_URL}"
