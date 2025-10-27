@@ -10,8 +10,7 @@
   "ports": {
     "5678/tcp": 5678
   },
-  "map": ["config:rw", "data:rw"]
-  },
+  "map": ["config:rw", "data:rw"],
   "options": {
     "port": 5678,
     "webhook_url": "",
