@@ -59,3 +59,6 @@ echo "- Host: ${N8N_HOST}"
 
 # 📌 Lancement de n8n en spécifiant le port et le Task Broker
 exec n8n start --port $PORT --tunnel-port $TASK_BROKER_PORT
+
+echo "✅ n8n démarré avec succès sur le port ${PORT}"
+
