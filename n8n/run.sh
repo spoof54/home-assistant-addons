@@ -22,6 +22,7 @@ export N8N_PROTOCOL="https"
 export N8N_PORT="${PORT}"
 export WEBHOOK_URL="${WEBHOOK_URL}"
 export N8N_ENDPOINT_REST="${BASE_API}"
+export VUE_APP_URL_BASE_API="${WEBHOOK_URL}"
 
 # Auth basique
 export N8N_BASIC_AUTH_ACTIVE=true
