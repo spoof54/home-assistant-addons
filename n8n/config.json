@@ -1,11 +1,12 @@
 {
   "name": "n8n Automation Addon",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "slug": "n8n",
   "description": "n8n - Workflow Automation Tool inside Home Assistant",
   "arch": ["amd64", "aarch64"],
   "startup": "services",
   "boot": "auto",
+  "webui": "http://[HOST]:[PORT:5678]",
   "ports": {
     "5678/tcp": 5678
   },
