@@ -10,7 +10,7 @@ ENV N8N_USER_FOLDER=/data
 WORKDIR /data
 
 # Installer n8n + plugin Home Assistant
-RUN npm install -g n8n n8n-nodes-homeassistantws
+RUN npm install -g n8n@1.75.0 n8n-nodes-homeassistantws
 
 # Sécurité : forcer les permissions
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
