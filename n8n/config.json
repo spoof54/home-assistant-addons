@@ -28,5 +28,5 @@
     "basic_auth_user": "str",
     "basic_auth_password": "str"
   },
-  "icon": "local/N8N-badge.png"
+  "icon": "local/n8n.png"
 }
