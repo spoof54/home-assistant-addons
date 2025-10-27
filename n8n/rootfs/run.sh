@@ -41,7 +41,7 @@ export N8N_BASIC_AUTH_USER="${BASIC_USER}"
 export N8N_BASIC_AUTH_PASSWORD="${BASIC_PASS}"
 
 # 📌 Task Broker sur PORT + 1 pour éviter conflit
-TASK_BROKER_PORT=$((PORT + 1))
+#TASK_BROKER_PORT=$((PORT + 1))
 
 # 📌 Recommandations pour éviter les dépréciations
 export DB_SQLITE_POOL_SIZE=1
